@@ -1,0 +1,26 @@
+
+IF "visit" = ? AND "resut" = ? THEN "visit" = "ÂÎÏÐÎÑ (attending classes?)
+IF "tasks" = ? AND "resut" = ? THEN "tasks" = "ÂÎÏÐÎÑ (works are performed?)"
+IF "answer" = ? AND "resut" = ? THEN "answer" = "ÂÎÏÐÎÑ (answers the questions?)"
+IF "additional question" = ? AND "resut" = ? THEN "additional question" = "ÂÎÏÐÎÑ (asks an additional question?)"
+IF "mistakes" = ? AND "resut" = ? THEN "mistakes" = "ÂÎÏÐÎÑ (makes mistakes?)"
+
+IF "knowledge level" = ? AND "resut" = ? AND "visit" = "YES" AND "tasks" = "YES"  AND "answer" = "YES"  AND "additional question" = "YES" AND "mistakes" = "YES" THEN "knowledge level = knows"
+IF "knowledge level" = ? AND "resut" = ? AND "visit" = "NO" AND "tasks" = "NO" AND "answer" = "NO" THEN "knowledge level = does not know"
+IF "knowledge level" = ? AND "resut" = ? AND "visit" = "YES" AND "tasks" = "NO" AND "answer" = "NO" THEN "knowledge level = does not know"
+
+IF "completeness of the answer" = ? AND "resut" = ? AND "visit" = "YES" AND "tasks" = "YES" AND "mistakes" = "YES" THEN "completeness of the answer = defect"
+
+IF "teacher type" = ? AND "resut" = ? AND "completeness of the answer = defect" AND "additional question" = "NO" THEN "teacher type = kind"
+IF "teacher type" = ? AND "resut" = ? AND "completeness of the answer = defect" AND "additional question" = "YES" THEN "teacher type = strict"
+
+IF  "knowledge level = knows" THEN "resut" = "score "5""
+IF "completeness of the answer = defect"  AND "teacher type = strict" THEN "resut" = "score "4""
+IF "teacher type = strict"  AND "answer" = "YES" THEN "resut" = "score "4""
+IF "completeness of the answer = defect" AND "teacher type = strict" AND "mistakes" = "YES" THEN "resut" = "score "3""
+IF "completeness of the answer = defect"  AND "teacher type = kind" AND "answer" = "NO" AND "mistakes" = "YES" THEN "resut" = "score "3""
+IF  "knowledge level = does not know" THEN "resut" = "score "did not pass""
+
+
+
+
